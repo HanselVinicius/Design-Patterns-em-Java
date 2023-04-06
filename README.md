@@ -33,6 +33,8 @@ Quando temos que chamar um objeto de uma API, banco ou qualquer lugar que este o
 Leitura auxiliar: [Refactoring Guru - Proxy](https://refactoring.guru/design-patterns/proxy)
 
 ## Padrões Comportamentais
+
+### Strategy
 Quando temos uma estratégia do projeto em uma classe que percebemos que ela vai sempre crescer e adquirir novas estratégias sempre que um novo valor como um tipo de imposto ou tipo de cliente, utilizamos do padrão Strategy que diz que:
 
 Devemos separar essa estratégia em classes novas para cada valor e utilizarmos de interfaces com polimorfismo e requerer no método de cálculo a interface como parâmetro para ter um código mais eficiente e mais limpo.
@@ -41,19 +43,27 @@ O padrão Strategy é utilizado sempre que temos diversos algoritmos para apenas
 
 Leitura auxiliar: https://refactoring.guru/design-patterns/strategy
 
+### Chain of Responsibility
+
 Quando temos várias regras e de cara não sabemos qual vamos aplicar, usamos o Chain of Responsibility, o qual cria uma cadeia de chamadas chamando classes que possuem esse método em comum e no construtor uma chamada para a próxima classe. Que pode ou resolver meu problema de cara ou chamar a outra classe que vai resolver meu problema. Se nenhuma classe tem o poder de resolver meu problema, temos alguém responsável por acabar com essa recursão.
 
 O Chain of Responsibility pode ser confundido com o Strategy, porém, o que difere eles é o fato de não sabermos de cara a regra que vai ditar o jogo.
 
 Leitura auxiliar: https://refactoring.guru/design-patterns/chain-of-responsibility
 
+### Template Method
+
 Quando percebemos que um código está se repetindo demais em classes filhas, podemos utilizar o padrão Template Method, que nada mais é que extrair essa regra para a classe mãe criando uma espécie de template para as classes filhas se alimentarem, reduzindo assim a repetição de código.
 
 Leitura auxiliar: https://refactoring.guru/design-patterns/template-method
 
+### State
+
 Quando temos um código que varia suas funções a partir de um estado de algum atributo e este atributo deve transitar entre os status com alguma regra, podemos aplicar o padrão State, que consiste em extrair cada estado em uma classe própria para ele, tendo uma classe mãe ou interface para conectá-los. E nesta deve se ter as bases dos métodos que vão aplicar a regra de transição entre esses estados.
 
 Leitura auxiliar: https://refactoring.guru/design-patterns/state
+
+### Proxy
 
 Quando queremos fazer um request (seja a API, a banco de dados ou até mesmo disparar um service), em vez de replicarmos esse código de pedido todas as vezes que formos fazê-lo, fica mais limpo fazermos um objeto que atuaria como meio de campo para fazer esses pedidos. Sendo esse o padrão de projeto Command, que quando utilizado como uma interface e cada classe implementando do jeito que lhe cabe, irá gerar um desacoplamento no nosso código.
 
